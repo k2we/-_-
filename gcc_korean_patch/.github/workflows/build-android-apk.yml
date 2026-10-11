@@ -1,0 +1,40 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'lib/**'
+      - 'pubspec.yaml'
+      - 'pubspec.lock'
+      - '.github/workflows/build-android-apk.yml'
+
+permissions:
+  contents: read
+
+env:
+  FLUTTER_VERSION: stable
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+      - name: Set up Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Generate localizations
+        run: flutter gen-l10n
+      - name: Build Android APKs
+        run: flutter build apk --release --split-per-abi
+      - name: Upload APKs
+        uses: actions/upload-artifact@v4
+        with:
+          name: grow-castle-calculator-apks
+          path: build/app/outputs/flutter-apk/*.apk
+          if-no-files-found: error

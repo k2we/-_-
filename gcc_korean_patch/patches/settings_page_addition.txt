@@ -1,0 +1,9 @@
+In lib/pages/settings_page.dart, inside _showLanguageDialog(), add this option after the English option (after the existing _buildDialogOption that pops 2):
+
+          _buildDialogOption(
+            label: loc.ko_withCode,
+            isSelected: currentLocaleChoice == 3,
+            onTap: () => Navigator.of(ctx).pop(3),
+          ),
+
+This is required so the language appears in Settings > Language.

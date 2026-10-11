@@ -5,7 +5,8 @@ import '../l10n/app_localizations.dart';
 enum LocaleOption {
   sys,
   zh,
-  en;
+  en,
+  ko;
 
   int get localeCode {
     switch (this) {
@@ -15,6 +16,8 @@ enum LocaleOption {
         return 1;
       case LocaleOption.en:
         return 2;
+      case LocaleOption.ko:
+        return 3;
     }
   }
 
@@ -26,6 +29,8 @@ enum LocaleOption {
         return AppLocalizations.of(globalNavigatorKey.currentContext!)!.zh_CN_withCode;
       case LocaleOption.en:
         return AppLocalizations.of(globalNavigatorKey.currentContext!)!.en_withCode;
+      case LocaleOption.ko:
+        return AppLocalizations.of(globalNavigatorKey.currentContext!)!.ko_withCode;
     }
   }
 
@@ -37,6 +42,8 @@ enum LocaleOption {
         return const Locale('zh');
       case LocaleOption.en:
         return const Locale('en');
+      case LocaleOption.ko:
+        return const Locale('ko');
     }
   }
 

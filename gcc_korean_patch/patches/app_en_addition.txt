@@ -1,0 +1,5 @@
+In lib/l10n/app_en.arb, add this entry after "en_withCode": "en\tEnglish":
+
+    "ko_withCode": "ko\t한국어",
+
+Keep valid JSON commas: the line before it must end with a comma, and this line must end with a comma if more keys follow.

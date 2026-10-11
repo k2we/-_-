@@ -92,6 +92,7 @@
     },
     "zh_CN_withCode": "zh_CN\t简体中文",
     "en_withCode": "en\tEnglish",
+    "ko_withCode": "ko\t한국어",
     "goldCalculator": "Gold Calculator",
     "waveSpeedQuery": "Wave Speed Query",
     "inherit": "Inherit",

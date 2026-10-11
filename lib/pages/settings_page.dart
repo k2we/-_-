@@ -166,6 +166,11 @@ class _SettingsPageState extends State<SettingsPage> {
             isSelected: currentLocaleChoice == 2,
             onTap: () => Navigator.of(ctx).pop(2),
           ),
+          _buildDialogOption(
+            label: loc.ko_withCode,
+            isSelected: currentLocaleChoice == 3,
+            onTap: () => Navigator.of(ctx).pop(3),
+          ),
         ],
       ),
     );
